@@ -8,7 +8,6 @@
 .slide {
   min-width: 360px;
   height: 100%;
-  opacity: 1%;
   background-image:
     url(../pages/components/images/hero/web/1.svg),
     url(../pages/components/images/hero/web/2.svg),
@@ -107,7 +106,7 @@
   }
     .circle-profile:hover {
       transform: scale(8.5);
-      border: 2px solid #78A3AD;
+      border: 2px solid red;
       cursor: pointer;
     }
 
