@@ -2,6 +2,233 @@
 @import url('https://fonts.cdnfonts.com/css/clash-display?styles=106288,106285,106286,106287,106289,106284');
 @import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Bellefair&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+/* ====================PURE CSS STYLES======================== */
+
+/* ===============Animated Hero Slide=============== */
+.slide {
+  min-width: 360px;
+  height: 100%;
+  background-image:
+    url(../pages/components/images/hero/web/1.svg),
+    url(../pages/components/images/hero/web/2.svg),
+    url(../pages/components/images/hero/web/3.svg),
+    url(../pages/components/images/hero/web/4.svg),
+    url(../pages/components/images/hero/web/5.svg);
+  background-repeat: no-repeat;
+  background-position-x: center, 380px, 380px, 380px, 380px;
+  background-size: contain;
+  animation: hero-animation 6s ease infinite;
+}
+
+.slide:first-child {
+  background-position-y: 55%;
+  animation-delay: -1.2s;
+}
+
+.slide:nth-child(2) {
+  background-position-y: 37%;
+  animation-delay: -2.4s;
+}
+
+.slide:nth-child(3) {
+  background-position-y: 21%;
+  animation-delay: -3.6s;
+}
+
+.slide:nth-child(4) {
+  background-position-y: 37%;
+  animation-delay: -4.8s;
+}
+
+.slide:nth-child(5) {
+  background-position-y: 26%;
+  animation-delay: 1s;
+  animation-delay: 0s;
+}
+
+
+  @keyframes hero-animation {
+    0% {
+      background-position-x: -380px, -380px, -380px, -380px, center;
+    }
+
+    5% {
+      background-position-x: -380px, -380px, -380px, center, +380px;
+    }
+
+    10% {
+      background-position-x: -380px, -380px, center, -380px, +380px;
+    }
+
+    15% {
+      background-position-x: -380px, center, +380px, +380px, +380px;
+    }
+
+    20% {
+      background-position-x: center, +380px, +380px, +380px, +380px;
+    }
+
+    40% {
+      background-position-x: -380px, center, 380px, 380px, 380px;
+    }
+
+    60% {
+      background-position-x: -380px, -380px, center, 380px, 380px;
+    }
+
+    80% {
+      background-position-x: -380px, -380px, -380px, center, 380px;
+    }
+
+    100% {
+      background-position-x: -380px, -380px, -380px, -380px, center;
+    }
+  }
+
+  /*=======================Profiles--------------- */
+  .circle-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+  }
+  
+  .circle-profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    border: 1px solid #78A3AD;
+    transition: transform 0.2s ease-in-out;
+    background-position: center;
+  }
+    .circle-profile:hover {
+      transform: scale(8.5);
+      border: 2px solid #78A3AD;
+      cursor: pointer;
+    }
+
+   
+    
+
+  
+  .circle-profile:nth-child(1) {
+    background-image:
+    url(../pages/components/images/featured/profile/1.svg);
+    z-index: 1;
+    left:5px;
+    transform: translateX(0);
+  }
+  
+  .circle-profile:nth-child(2) {
+    background-image:
+    url(../pages/components/images/featured/profile/2.svg);
+    z-index: 2;
+    left:15px;
+    transform: translateX(15px);
+  }
+  
+  .circle-profile:nth-child(3) {
+    background-image:
+    url(../pages/components/images/featured/profile/3.svg);
+    z-index:3;
+    left:25px;
+    transform: translateX(30px);
+  }
+
+  .circle-profile:nth-child(4) {
+    background-image:
+    url(../pages/components/images/featured/profile/4.svg);
+    z-index: 4;
+    top: 1px;
+    left:45px;
+    transform: translateX(40px);
+  }
+  
+  .circle-profile:nth-child(5) {
+    background-image:
+    url(../pages/components/images/featured/profile/5.svg);
+    top:2px;
+    left:55px;
+    z-index: 5;
+    transform: translateX(60px);
+  }
+
+  /* =========================Top Creators============================== */
+
+  .auction-image {
+    background-image: url('../pages/components/images/upcoming/2.svg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .auct-image {
+    background-image: url('../pages/components/images/upcoming/1.svg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .creator-animation{
+    margin-bottom: -3.5469rem;
+    margin-left: 450px;
+    width: 700px;
+    aspect-ratio: 1/1;
+    background: linear-gradient
+      (0deg, rgba(0, 0, 0, 0.04), 
+      rgba(0, 0, 0, 0.04));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    z-index: 3;
+    animation: creators-animation 20s linear infinite;
+    transition: 10s;
+  }
+
+  @keyframes creators-animation {
+    0% {
+       background-image: url(../pages/components/images/creator/1.svg); 
+    }
+  
+    50% {
+      background-image: url(../pages/components/images/creator/2.svg); 
+    }
+  
+    100% {
+      background-image: url(../pages/components/images/creator/3.svg); 
+    }
+  }
+  
+
+  /* MEDIA QUERY FOR SMALLER DEVICES */
+@media only screen and (max-width:768px){
+  /*=======================Profiles--------------- */
+  .circle-container {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .circle-profile {
+    background-position: contain;
+    background-size: auto;
+    width: 40px;
+    height:40px
+    
+  }
+
+  .creator-animation{
+    margin-bottom: 0em;
+    margin-left: -96px;
+    background-size: 600px;
+    aspect-ratio: 4/3;
+  }
+}
+
+
+
+
+/* ====================TAILWIND======================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,224 +254,6 @@
     @apply hidden md:flex w-[100%] items-center gap-4 h-[600px];
   }
   
-  /* ===============Animated Hero Slide=============== */
-  .slide {
-      min-width: 360px;
-      height: 100%;
-      background-image:
-        url(../pages/components/images/hero/web/1.svg),
-        url(../pages/components/images/hero/web/2.svg),
-        url(../pages/components/images/hero/web/3.svg),
-        url(../pages/components/images/hero/web/4.svg),
-        url(../pages/components/images/hero/web/5.svg);
-      background-repeat: no-repeat;
-      background-position-x: center, 380px, 380px, 380px, 380px;
-      background-size: contain;
-      animation: hero-animation 6s ease infinite;
+  
     }
 
-    .slide:first-child {
-      background-position-y: 55%;
-      animation-delay: -1.2s;
-    }
-
-    .slide:nth-child(2) {
-      background-position-y: 37%;
-      animation-delay: -2.4s;
-    }
-
-    .slide:nth-child(3) {
-      background-position-y: 21%;
-      animation-delay: -3.6s;
-    }
-
-    .slide:nth-child(4) {
-      background-position-y: 37%;
-      animation-delay: -4.8s;
-    }
-
-    .slide:nth-child(5) {
-      background-position-y: 26%;
-      animation-delay: 1s;
-      animation-delay: 0s;
-    }
-
-
-      @keyframes hero-animation {
-        0% {
-          background-position-x: -380px, -380px, -380px, -380px, center;
-        }
-
-        5% {
-          background-position-x: -380px, -380px, -380px, center, +380px;
-        }
-
-        10% {
-          background-position-x: -380px, -380px, center, -380px, +380px;
-        }
-
-        15% {
-          background-position-x: -380px, center, +380px, +380px, +380px;
-        }
-
-        20% {
-          background-position-x: center, +380px, +380px, +380px, +380px;
-        }
-
-        40% {
-          background-position-x: -380px, center, 380px, 380px, 380px;
-        }
-
-        60% {
-          background-position-x: -380px, -380px, center, 380px, 380px;
-        }
-
-        80% {
-          background-position-x: -380px, -380px, -380px, center, 380px;
-        }
-
-        100% {
-          background-position-x: -380px, -380px, -380px, -380px, center;
-        }
-      }
-
-      /*=======================Profiles--------------- */
-      .circle-container {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        margin-top: 15px;
-      }
-      
-      .circle-profile {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 51px;
-        height: 51px;
-        border-radius: 50%;
-        border: 1px solid #78A3AD;
-        transition: transform 0.2s ease-in-out;
-        background-position: center;
-      }
-        .circle-profile:hover {
-          transform: scale(8.5);
-          border: 2px solid #78A3AD;
-          cursor: pointer;
-        }
-
-       
-        
-
-      
-      .circle-profile:nth-child(1) {
-        background-image:
-        url(../pages/components/images/featured/profile/1.svg);
-        z-index: 1;
-        left:5px;
-        transform: translateX(0);
-      }
-      
-      .circle-profile:nth-child(2) {
-        background-image:
-        url(../pages/components/images/featured/profile/2.svg);
-        z-index: 2;
-        left:15px;
-        transform: translateX(15px);
-      }
-      
-      .circle-profile:nth-child(3) {
-        background-image:
-        url(../pages/components/images/featured/profile/3.svg);
-        z-index:3;
-        left:25px;
-        transform: translateX(30px);
-      }
-
-      .circle-profile:nth-child(4) {
-        background-image:
-        url(../pages/components/images/featured/profile/4.svg);
-        z-index: 4;
-        top: 1px;
-        left:45px;
-        transform: translateX(40px);
-      }
-      
-      .circle-profile:nth-child(5) {
-        background-image:
-        url(../pages/components/images/featured/profile/5.svg);
-        top:2px;
-        left:55px;
-        z-index: 5;
-        transform: translateX(60px);
-      }
-
-      /* =========================Top Creators============================== */
-
-      .auction-image {
-        background-image: url('../pages/components/images/upcoming/2.svg');
-        background-size: cover;
-        background-position: center;
-      }
-      
-      .auct-image {
-        background-image: url('../pages/components/images/upcoming/1.svg');
-        background-size: cover;
-        background-position: center;
-      }
-
-      .creator-animation{
-        margin-bottom: -3.5469rem;
-        margin-left: 450px;
-        width: 700px;
-        aspect-ratio: 1/1;
-        background: linear-gradient
-          (0deg, rgba(0, 0, 0, 0.04), 
-          rgba(0, 0, 0, 0.04));
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        z-index: 3;
-        animation: creators-animation 20s linear infinite;
-        transition: 10s;
-      }
-
-      @keyframes creators-animation {
-        0% {
-           background-image: url(../pages/components/images/creator/1.svg); 
-        }
-      
-        50% {
-          background-image: url(../pages/components/images/creator/2.svg); 
-        }
-      
-        100% {
-          background-image: url(../pages/components/images/creator/3.svg); 
-        }
-      }
-      
-
-      /* MEDIA QUERY FOR SMALLER DEVICES */
-    @media only screen and (max-width:768px){
-      /*=======================Profiles--------------- */
-      .circle-container {
-        width: 30px;
-        height: 30px;
-      }
-      
-      .circle-profile {
-        background-position: contain;
-        background-size: auto;
-        width: 40px;
-        height:40px
-        
-      }
-
-      .creator-animation{
-        margin-bottom: 0em;
-        margin-left: -96px;
-        background-size: 600px;
-        aspect-ratio: 4/3;
-      }
-    }
-}
