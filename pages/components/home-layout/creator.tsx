@@ -32,7 +32,7 @@ const Creator: React.FC = () => {
           </div>
           <p className='pl-4 text-[13px] font-[200] text-[#000000] opacity-[57%] md:w-[80%] md:text-[32px]'>
             “Everything always looked better in black and white. Everything always as if it were the
-            first time; there's always more people in a black and white photograph. It just makes it
+            first time; there&#39;s always more people in a black and white photograph. It just makes it
             seem that there were more people at a gig, more people at a football match, than with
             colour photography. Everything looks more exciting.”– Jack Lowden
           </p>

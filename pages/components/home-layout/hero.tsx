@@ -1,11 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-import One from '../images/hero/web/1.svg'
-// import Two from '../images/hero/web/2.svg';
-// import Three from '../images/hero/web/3.svg';
-// import Four from '../images/hero/web/4.svg';
-// import Five from '../images/hero/web/5.svg';
 
 import Group from '../images/hero/mobile/group.svg'
 
