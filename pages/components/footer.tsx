@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import Mail from './images/footer/mail.svg'
-import Location from './images/footer/pin.svg'
+import Mail from 'public/images/footer/mail.svg'
+import Location from 'public/images/footer/pin.svg'
 
 interface LinkItem {
   id: number

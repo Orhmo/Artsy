@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-
-import Group from '../images/hero/mobile/group.svg'
+import Group from '/public/images/hero/mobile/group.svg'
 
 const Hero: React.FC = () => {
   return (

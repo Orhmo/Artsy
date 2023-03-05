@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { BsArrowRight } from 'react-icons/bs'
-import Arrow from '../images/featured/arrow.svg'
+import Arrow from '/public/images/featured/arrow.svg'
 
 const Auctions: React.FC = () => {
   return (

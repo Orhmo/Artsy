@@ -2,12 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 
 // Import products
-import One from '../images/featured/1.svg'
-import Two from '../images/featured/2.svg'
-import Three from '../images/featured/3.svg'
+import One from '/public/images/featured/1.svg'
+import Two from '/public/images/featured/2.svg'
+import Three from '/public/images/featured/3.svg'
 
-import Arrow from '../images/featured/arrow.svg'
-import Arrow2 from '../images/featured/arrow2.svg'
+import Arrow from '/public/images/featured/arrow.svg'
+import Arrow2 from '/public/images/featured/arrow2.svg'
 
 const Featured: React.FC = () => {
   return (

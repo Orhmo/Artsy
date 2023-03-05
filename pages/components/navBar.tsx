@@ -3,10 +3,10 @@ import Image from 'next/image'
 import React, { useState, useEffect, useMemo } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
-import Logo from './images/nav/ARTSY.svg'
-import Search from './images/nav/search.svg'
-import Cart from './images/nav/cart.svg'
-import Notification from './images/nav/notification.svg'
+import Logo from 'public/images/nav/ARTSY.svg'
+import Search from 'public/images/nav/search.svg'
+import Cart from 'public/images/nav/cart.svg'
+import Notification from 'public/images/nav/notification.svg'
 
 const NavBar: React.FC = () => {
   const [nav, setNav] = useState<boolean>(false)
@@ -75,7 +75,7 @@ const NavBar: React.FC = () => {
       <div className='align-center flex w-1/2 items-center justify-center md:w-1/5'>
         <Link href='/'>
           <div className='relative left-4 top-4 h-12 w-[80px] cursor-pointer opacity-75 transition hover:opacity-100 md:left-0 md:w-full'>
-            <Image src={Logo} alt=''/>
+            <Image src={Logo} alt='' />
           </div>
         </Link>
       </div>
