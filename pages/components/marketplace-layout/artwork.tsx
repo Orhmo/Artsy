@@ -58,7 +58,7 @@ const Artworks = (): JSX.Element => {
   
             <div className='mt-4'>
                 <h1 className='font-bold mb-2 border-b-2 py-4'>Filter</h1>
-                <div className='flex flex-col mx-auto py-4'>
+                <div className='flex flex-col mx-auto py-6'>
           {categories.map(category => (
             <label key={category}>
               <input
