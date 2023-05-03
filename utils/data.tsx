@@ -46,7 +46,7 @@ export const ARTWORKS = [
         image: Artwork_5,
         name: "The Lawmarkers",
         price: "$3.90",
-        category: "Editorials",
+        category: "Art & Museum",
     },
     {
         id: nanoid(),
@@ -60,7 +60,7 @@ export const ARTWORKS = [
         image: Artwork_7,
         name: "Alternating",
         price: "$3.90",
-        category: "Editorials",
+        category: "Art & Museum",
     },
     {
         id: nanoid(),
@@ -74,7 +74,7 @@ export const ARTWORKS = [
         image: Artwork_9,
         name: "Beverly",
         price: "$3.90",
-        category: "Optics",
+        category: "Nature",
     },
     {
         id: nanoid(),
