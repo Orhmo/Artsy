@@ -6,7 +6,7 @@ import Filter from './filter'
 import PriceSlider from './slider'
 
 interface Artwork {
-  id: number
+  id: string
   name: string
   image: string
   category: string
