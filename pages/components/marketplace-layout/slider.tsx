@@ -17,7 +17,7 @@ const ArtworkFilter: React.FC<ArtworkFilterProps> = ({ handlePriceRangeChange })
     <div className='mt-4'>
       <h1 className='mb-2 border-b-2 py-4 font-bold'>By Price</h1>
       <div className='py-2'>
-        <div className='flex justify-between py-6 px-6 text-lg'>
+        <div className='flex justify-between py-6 px-2 text-lg'>
           <span>${values[0].toFixed(2)}</span>
           <span className='px-2'>-</span>
           <span>${values[1].toFixed(2)}</span>

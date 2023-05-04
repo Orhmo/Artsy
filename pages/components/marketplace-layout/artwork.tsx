@@ -70,7 +70,7 @@ const Artworks = (): JSX.Element => {
 
   return (
     <div className='m-4 grid grid-flow-col gap-8'>
-      <div>
+      <div className='w-[20vw]'>
         <Filter
           categories={categories}
           selectedCategories={selectedCategories}
