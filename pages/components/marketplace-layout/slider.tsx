@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
-import { Range } from 'react-range';
+import React, { useState } from 'react'
+import { Range } from 'react-range'
 
 interface ArtworkFilterProps {
-  handlePriceRangeChange: (values: number[]) => void;
+  handlePriceRangeChange: (values: number[]) => void
 }
 
 const ArtworkFilter: React.FC<ArtworkFilterProps> = ({ handlePriceRangeChange }) => {
-  const [values, setValues] = useState([3, 100]);
+  const [values, setValues] = useState([3, 100])
 
   const handleValuesChange = (newValues: number[]) => {
-    setValues(newValues);
-    handlePriceRangeChange(newValues);
-  };
+    setValues(newValues)
+    handlePriceRangeChange(newValues)
+  }
 
   return (
     <div className='mt-4'>
-      <h1 className='font-bold mb-2 border-b-2 py-4'>By Price</h1>
-          <div className='py-2'>
-              
-          <div className='flex justify-between text-lg py-6 px-6'>
+      <h1 className='mb-2 border-b-2 py-4 font-bold'>By Price</h1>
+      <div className='py-2'>
+        <div className='flex justify-between py-6 px-6 text-lg'>
           <span>${values[0].toFixed(2)}</span>
-                  <span className='px-2'>-</span>
-                  <span>${values[1].toFixed(2)}</span>
+          <span className='px-2'>-</span>
+          <span>${values[1].toFixed(2)}</span>
         </div>
         <Range
           step={0.5}
@@ -39,16 +38,12 @@ const ArtworkFilter: React.FC<ArtworkFilterProps> = ({ handlePriceRangeChange })
             </div>
           )}
           renderThumb={({ props }) => (
-            <div
-              {...props}
-              className='h-6 w-6 rounded-full bg-white border-2 border-gray-400'
-            />
+            <div {...props} className='h-6 w-6 rounded-full border-2 border-gray-400 bg-white' />
           )}
         />
-       
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ArtworkFilter;
+export default ArtworkFilter
