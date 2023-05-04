@@ -3,23 +3,26 @@ import Image from 'next/image';
 
 import { ARTWORKS } from '@/utils/data';
 import Filter from './filter';
+import PriceSlider from './slider';
 
 interface Artwork {
   id: number;
   name: string;
   image: string;
   category: string;
-  price: string;
+  price: number;
 }
 
 const Artworks = (): JSX.Element => {
   const [displayCount, setDisplayCount] = useState<number>(9);
   const [selectedCategories, setSelectedCategories] = useState<Array<string>>(['All']);
+  const [priceRange, setPriceRange] = useState<[number, number]>([3, 100]);
   const totalArtworks: number = ARTWORKS.length;
 
   const categories: Array<string> = ['All', ...new Set(ARTWORKS.map(artwork => artwork.category))];
   const displayedArtworks: Array<Artwork> = ARTWORKS
     .filter(artwork => selectedCategories.includes('All') || selectedCategories.includes(artwork.category))
+    .filter(artwork => artwork.price >= priceRange[0] && artwork.price <= priceRange[1])
     .slice(0, displayCount);
 
   const displayedCountText: string = `See 1-${displayedArtworks.length} of ${totalArtworks} results`;
@@ -59,10 +62,16 @@ const Artworks = (): JSX.Element => {
     setSelectedCategories(newSelectedCategories);
   };
 
+  const handlePriceRangeChange = (values: number[]): void => {
+    setPriceRange([values[0], values[1]]);
+  };
+
   return (
-    <div className='grid grid-flow-col gap-8 m-4'>
+      <div className='grid grid-flow-col gap-8 m-4'>
+          <div>
       <Filter categories={categories} selectedCategories={selectedCategories} handleCategoryChange={handleCategoryChange} />
-  
+      <PriceSlider handlePriceRangeChange={handlePriceRangeChange} />
+  </div>
             <div className='flex flex-col justify-center items-center '>
         <div className='text-center mt-4 px-8 py-2 border rounded-lg shadow-lg mb-8'>
           {displayedCountText}
@@ -76,7 +85,7 @@ const Artworks = (): JSX.Element => {
             >
               <Image src={artwork.image} alt='' />
               <h2 className='py-4 uppercase italic'>{artwork.name}</h2>
-              <span className='py-2 font-bold'>{artwork.price}</span>
+              <span className='py-2 font-bold'>$ {artwork.price}</span>
             </div>
           ))}
         </div>
