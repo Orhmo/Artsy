@@ -1,79 +1,67 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import Filter from './Filter';
-
 import { ARTWORKS } from '@/utils/data';
+import Filter from './filter';
+
+interface Artwork {
+  id: number;
+  name: string;
+  image: string;
+  category: string;
+  price: string;
+}
 
 const Artworks = (): JSX.Element => {
-    const [displayCount, setDisplayCount] = useState<number>(9);
-    const [selectedCategories, setSelectedCategories] = useState<Array<string>>(['All']);
-    const totalArtworks: number = ARTWORKS.length;
-  
-    const categories: Array<string> = ['All', ...new Set(ARTWORKS.map(artwork => artwork.category))];
-    const displayedArtworks: Array<Artwork> = ARTWORKS
+  const [displayCount, setDisplayCount] = useState<number>(9);
+  const [selectedCategories, setSelectedCategories] = useState<Array<string>>(['All']);
+  const totalArtworks: number = ARTWORKS.length;
+
+  const categories: Array<string> = ['All', ...new Set(ARTWORKS.map(artwork => artwork.category))];
+  const displayedArtworks: Array<Artwork> = ARTWORKS
     .filter(artwork => selectedCategories.includes('All') || selectedCategories.includes(artwork.category))
     .slice(0, displayCount);
-  
-    const displayedCountText: string = `See 1-${displayedArtworks.length} of ${totalArtworks} results`;
-  
-    const handleSeeMoreClick = (): void => {
-      setDisplayCount(displayCount + 3);
-    };
-  
-    const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-      const category = event.target.value;
-      const newSelectedCategories = [...selectedCategories];
-  
-      if (category === 'All') {
-        // If "All" category is selected, uncheck all other categories
-        newSelectedCategories.splice(1);
-      } else {
-        // If any other category is selected, uncheck the "All" category
-        const allIndex = newSelectedCategories.indexOf('All');
-        if (allIndex !== -1) {
-          newSelectedCategories.splice(allIndex, 1);
-        }
+
+  const displayedCountText: string = `See 1-${displayedArtworks.length} of ${totalArtworks} results`;
+
+  const handleSeeMoreClick = (): void => {
+    setDisplayCount(displayCount + 3);
+  };
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const category = event.target.value;
+    const newSelectedCategories = [...selectedCategories];
+
+    if (category === 'All') {
+      // If "All" category is selected, uncheck all other categories
+      newSelectedCategories.splice(1);
+    } else {
+      // If any other category is selected, uncheck the "All" category
+      const allIndex = newSelectedCategories.indexOf('All');
+      if (allIndex !== -1) {
+        newSelectedCategories.splice(allIndex, 1);
       }
-  
-      if (newSelectedCategories.includes(category)) {
-        // Remove the category if it's already selected
-        newSelectedCategories.splice(newSelectedCategories.indexOf(category), 1);
-      } else {
-        // Add the category if it's not already selected
-        newSelectedCategories.push(category);
-      }
-  
-      if (newSelectedCategories.length === 0) {
-        // If no category is selected, recheck the "All" category
-        newSelectedCategories.push('All');
-      }
-  
-      setSelectedCategories(newSelectedCategories);
-    };
-  
-    return (
-      <div className='grid grid-flow-col gap-8 m-4'>
-        
-  
-            <div className='mt-4'>
-                <h1 className='font-bold mb-2 border-b-2 py-4'>Filter</h1>
-                <div className='flex flex-col mx-auto py-6'>
-          {categories.map(category => (
-            <label key={category}>
-              <input
-                type='checkbox'
-                value={category}
-                checked={selectedCategories.includes(category)}
-                      onChange={handleCategoryChange}
-                      className=''
-                     
-              />
-             <span className='p-3'>{category}</span>
-            </label>
-          ))}
-                    </div>
-        </div>
+    }
+
+    if (newSelectedCategories.includes(category)) {
+      // Remove the category if it's already selected
+      newSelectedCategories.splice(newSelectedCategories.indexOf(category), 1);
+    } else {
+      // Add the category if it's not already selected
+      newSelectedCategories.push(category);
+    }
+
+    if (newSelectedCategories.length === 0) {
+      // If no category is selected, recheck the "All" category
+      newSelectedCategories.push('All');
+    }
+
+    setSelectedCategories(newSelectedCategories);
+  };
+
+  return (
+    <div className='grid grid-flow-col gap-8 m-4'>
+      <Filter categories={categories} selectedCategories={selectedCategories} handleCategoryChange={handleCategoryChange} />
   
             <div className='flex flex-col justify-center items-center '>
         <div className='text-center mt-4 px-8 py-2 border rounded-lg shadow-lg mb-8'>

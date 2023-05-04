@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 import NavBar from './components/navBar';
 import Footer from './components/footer';
